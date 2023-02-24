@@ -1,8 +1,9 @@
-par1=input("введите пароль ")
-par2=input("введите пароль еще раз")
-if par1 == par2:
-    print('Пароль принят')
-elif par1 != par2:
-    print('Пароль не принят')
-
-  
+mesto=input('Введите номер места в вагоне')
+if (0 < mesto <= 36):
+    print('Ваше место в купе')
+else:
+    print('Ваше место боковое')
+if mesto % 2 = 0:
+    print('верхнее')
+else:
+    print('нижнее')
