@@ -10,3 +10,4 @@ if mesto % 2 == 0:
     print('верхнее')
 else:
     print('нижнее')
+
