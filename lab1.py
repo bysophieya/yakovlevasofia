@@ -5,3 +5,4 @@ if par1 == par2:
 elif par1 != par2:
     print('Пароль не принят')
 
+  
