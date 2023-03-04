@@ -1,4 +1,4 @@
-word=input('Введите слово ')
+word=input('Введите слово  ')
 k=0
 for i in range(0,len(word)):
     if word[i] =='ф':

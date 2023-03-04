@@ -1,7 +1,7 @@
 c=0
 k=0
 k1=0
-for i in range(1,7):
+for i in range(1,8):
     for j in range(1,5):
         print( i,"+",j,"= ",end="")
         otvet = int(input())
