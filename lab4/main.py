@@ -1,5 +1,5 @@
 def chislo(x):
-    if x % 3 == 0:
+    if x % 5 == 0:
         print('Число делится на 3')
         return None
     else:
