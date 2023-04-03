@@ -1,11 +1,30 @@
-from PIL import Image
 import cv2
-image1 = cv2.imread(r'C:\Users\User\Desktop\1.jpg')
-image2 = cv2.imread(r'C:\Users\User\Desktop\2.jpg')
-image3 = cv2.imread(r'C:\Users\User\Desktop\3.jpg')
-image4 = cv2.imread(r'C:\Users\User\Desktop\4.jpg')
-image5 = cv2.imread(r'C:\Users\User\Desktop\5.jpg')
-gray_image = cv2.cvtColor(image4, cv2.COLOR_BGR2GRAY) #это одноканальная версия изображения.
-cv2.imshow("Image", gray_image)
+import numpy
+logo = cv2.imread(r'C:\Users\User\Desktop\монтаж\watermark.png')
+img = cv2.imread(r'C:\Users\User\Desktop\cat.jpg')
+h_logo, w_logo, _ = logo.shape
+
+h_img, w_img, _ = img.shape
+
+# calculating coordinates of center
+# calculating center, where we are going to
+# place our watermark
+center_y = int(h_img / 2)
+center_x = int(w_img / 2)
+
+# calculating from top, bottom, right and left
+top_y = center_y - int(h_logo / 2)
+left_x = center_x - int(w_logo / 2)
+bottom_y = top_y + h_logo
+right_x = left_x + w_logo
+
+# adding watermark to the image
+destination = img[top_y:bottom_y, left_x:right_x]
+result = cv2.addWeighted(destination, 1, logo, 0.5, 0)
+
+# displaying and saving image
+img[top_y:bottom_y, left_x:right_x] = result
+cv2.imwrite("watermarked.jpg", img)
+cv2.imshow("Watermarked Image", img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
