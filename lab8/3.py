@@ -1,16 +1,23 @@
 from PIL import Image,ImageDraw,ImageFont
+import numpy as np
+
+
 img = Image.open('picture.jpg')
-img_crop=img.crop((0, 30, 564, 591))
-img_crop.save('newpicture.jpg')
+img_arr = np.array(img) #Изображения преобразуются в массив Numpy в формате высоты, ширины, канала.
+
+img_arr[0: 400, 0: 200] = (0, 0, 0) #мы удалили бы пиксели в области от (0,0) до (400, 200) (верхняя левая сторона)
+img = Image.fromarray(img_arr) #создает изображение в памяти из объекта obj
 name=input('Кого вы хотите поздравить? ')
+w=564
+h=619
 draw_text = ImageDraw.Draw(img) #изображения для рисования
 myFont = ImageFont.truetype('Montserrat-Regular.ttf', 40) # подключаем шрифт
 draw_text.text(
-    (90,50), #расположение
-    '{},поздравляю!'.format(name), #форматирует строки
+    (50,50), #расположение
+    '{},поздравляю!'.format(name),
     font=myFont,
-    stroke_width=2, #ширина обводки текста
-    fill=(0, 0, 0),
+    stroke_width=2,
+    fill=(0, 0, 255),
     )
 img.show()
 img.save('newpicture.png')
