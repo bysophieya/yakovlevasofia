@@ -1,6 +1,6 @@
 import csv
 s=0
-with open('products1.csv',"r") as file:
+with open('products1.csv',newline=" ") as file:
     reader= csv.reader(file) #читаем файл
     print('Нужно купить:')
     next(reader)
