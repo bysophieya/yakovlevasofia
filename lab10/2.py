@@ -1,6 +1,6 @@
 import json
 
-# загружаем данные из файла
+# загружаем данные из файла,сериализация
 with open('products.json') as json_file:
     data = json.load(json_file)
 
@@ -19,7 +19,7 @@ new_product = {
 }
 data['products'].append(new_product)
 
-# записываем обновленные данные в файл
+# записываем обновленные данные в файл,десериализация
 with open('products.json', 'w') as json_file:
     json.dump(data, json_file)
 
