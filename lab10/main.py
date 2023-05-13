@@ -10,7 +10,7 @@ def print_product_info(product):
         print("Нет в наличии")
     print() # выводим пустую строку для разделения продуктов
 with open("products.json", "r", encoding='utf-8') as f:
-    products2 = json.load(f) # загружаем данные из файла в переменную
+    products2 = json.load(f) # загружаем данные из файла в переменную,сериализация
 
 products = products2["products"] # получаем список продуктов из словаря products2
 
