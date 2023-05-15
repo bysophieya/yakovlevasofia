@@ -12,7 +12,20 @@ class IceCreamStand(Restaurant):
         self.flavors=flavors
         self.location = location
         self.time = time
+
     def sorts(self):
-        print("Сорты мороженого: ", self.flavors)
-IceCreamStand=IceCreamStand('Шоколадное')
-print(IceCreamStand.sorts())
+        for flavor in self.flavors:
+            print(flavor)
+    def change_flavors(self,newflavors):
+        self.flavors=newflavors
+    def check_flavors(self):
+        if sort in self.flavors:
+            print("Есть в наличие")
+        else:
+            print("Такого сорта нет")
+IceCreamStand1=IceCreamStand('Марчеллис','Итальянская',['Шоколадное',"Клубничное"],'Петроградская','12:00-18:00')
+print(IceCreamStand1.sorts())
+IceCreamStand1.change_flavors(['Клубничное','Шоколадное',"Ванильное"])
+print(IceCreamStand1.sorts())
+sort=input("Введите сорт мороженого ")
+print(IceCreamStand1.check_flavors())

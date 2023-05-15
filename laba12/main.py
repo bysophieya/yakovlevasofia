@@ -10,7 +10,9 @@ class IceCreamStand(Restaurant):
     def __init__(self, restaurant_name, cuisine_type, flavors):
         super().__init__(restaurant_name, cuisine_type)
         self.flavors = flavors
-    def sorts(self):
-        print("Сорты мороженого: ", self.flavors)
+
+    def show_menu(self):
+        for flavor in self.flavors:
+            print(flavor)
 IceCreamStand1=IceCreamStand('Марчеллис','Итальянская',['Шоколадное',"Клубничное"])
 print(IceCreamStand1.sorts())
