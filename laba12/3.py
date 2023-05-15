@@ -14,6 +14,6 @@ window=Tk()
 window.geometry('100x200')
 window['bg']='white'
 
-name=Label(window,text="{}".format(IceCreamStand1.info()),fg='pink',)
+name=Label(window,text="{}".format(IceCreamStand1.info()),fg='pink')
 name.pack()
 window.mainloop()
