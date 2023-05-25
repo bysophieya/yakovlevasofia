@@ -1,4 +1,4 @@
-import json
+import json #формат передачи данных, который используется при взаимодействии веб-сервера и браузера
 
 def print_product_info(product):
     print(f"Название: {product['name']}")
