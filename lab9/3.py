@@ -1,4 +1,4 @@
-import csv
+import csv #текстовый формат, предназначенный для представления табличных данных.
 s=0
 with open('products1.csv',newline=" ") as file:
     reader= csv.reader(file) #читаем файл
