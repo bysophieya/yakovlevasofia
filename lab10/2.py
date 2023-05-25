@@ -1,7 +1,7 @@
 import json
 
 # загружаем данные из файла,десериализация
-with open('products.json') as json_file:
+with open('products.json',encoding='utf-8') as json_file:
     data = json.load(json_file)
 
 # запрашиваем новые данные у пользователя
@@ -20,7 +20,7 @@ new_product = {
 data['products'].append(new_product)
 
 # записываем обновленные данные в файл,сериализация
-with open('products.json', 'w') as json_file:
+with open('products.json', 'w',encoding='utf-8') as json_file:
     json.dump(data, json_file)
 
 # выводим обновленные данные на экран
